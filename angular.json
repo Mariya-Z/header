@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "header-lib": {
+      "root": "projects/header-lib",
+      "sourceRoot": "projects/header-lib/src",
+      "projectType": "library",
+      "prefix": "next",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/header-lib/tsconfig.lib.json",
+            "project": "projects/header-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/header-lib/src/test.ts",
+            "tsConfig": "projects/header-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/header-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/header-lib/tsconfig.lib.json",
+              "projects/header-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "header-lib-app"

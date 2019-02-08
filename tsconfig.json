@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "header-lib": [
+        "dist/header-lib"
+      ],
+      "header-lib/*": [
+        "dist/header-lib/*"
+      ]
+    }
   }
 }

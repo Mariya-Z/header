@@ -1,0 +1,46 @@
+@import './../../scss/colors';
+@import './../../scss/fonts';
+@import './../../scss/sizes';
+
+.next-header {
+    margin: 0;
+    background-color: rgba(0, 170, 238, 0.3);
+    height: $header-height;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    font-family: $font-headers;
+
+    &__env {
+        background-color: $blue-light;
+        color: $white;
+        // height: $header-height;
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    &__bar {
+        background-color: $novartis-blue;
+        color: $white;
+        // height: $header-height;
+        padding: 6px 10px;
+    }
+
+    &__name {
+        color: $white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    &__descr {
+        font-size: 14px;
+        margin-left: 4px;
+    }
+
+    &__user-section {
+        display: flex;
+        flex-direction: row;
+    }
+}

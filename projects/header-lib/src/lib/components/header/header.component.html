@@ -1,3 +1,14 @@
-<p>
-  header works!
-</p>
+<article class="next-header">
+  <section class="next-header__env" *ngIf="env">{{env}}</section>
+  <section class="next-header__bar">
+    <div>
+      <a href="/" class="next-header__name"><span>{{role}}</span></a>
+      <span class="next-header__descr">Descr</span>
+    </div>
+    <div class="next-header__user-section">
+      <!-- <ng-content></ng-content>
+      <ng-content></ng-content>
+      <ng-content></ng-content> -->
+    </div>
+  </section>
+</article>

@@ -44,3 +44,11 @@ storiesOf('Another Button', module).add('button with link to another story', () 
     onClick: linkTo('Welcome'),
   },
 }));
+
+storiesOf('Another Button2', module).add('button with link to another story', () => ({
+  component: Button,
+  props: {
+    text: 'Go to Welcome Story',
+    onClick: linkTo('Welcome2'),
+  },
+}));

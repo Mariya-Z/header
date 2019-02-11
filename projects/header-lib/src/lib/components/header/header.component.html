@@ -1,14 +1,16 @@
 <article class="next-header">
-  <section class="next-header__env" *ngIf="env">{{env}}</section>
+  <section class="next-header__env" *ngIf="env">
+    <div>{{env}}</div>
+  </section>
   <section class="next-header__bar">
     <div>
-      <a href="/" class="next-header__name"><span>{{role}}</span></a>
+      <span class="next-header__name" (click)="test()">{{role}}</span>
       <span class="next-header__descr">Descr</span>
     </div>
     <div class="next-header__user-section">
-      <!-- <ng-content></ng-content>
-      <ng-content></ng-content>
-      <ng-content></ng-content> -->
+      <ng-content select="[help-slot]"></ng-content>
+      <ng-content select="[userName]"></ng-content>
+      <ng-content select="[logout]"></ng-content>
     </div>
   </section>
 </article>

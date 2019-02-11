@@ -9,7 +9,7 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    // align-items: stretch;
     font-family: $font-headers;
 
     &__env {
@@ -23,15 +23,19 @@
     &__bar {
         background-color: $novartis-blue;
         color: $white;
+        display: flex;
+        justify-content: space-between;
         // height: $header-height;
         padding: 6px 10px;
+        width: 100%;
     }
 
     &__name {
         color: $white;
         text-decoration: none;
         font-weight: bold;
-        font-size: 20px;
+        cursor: pointer;
+        // font-size: 20px;
     }
 
     &__descr {
@@ -40,7 +44,6 @@
     }
 
     &__user-section {
-        display: flex;
-        flex-direction: row;
+        display: inherit;
     }
 }

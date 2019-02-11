@@ -5,10 +5,42 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 
-storiesOf('Welcome', module).add('to Storybook', () => ({
-  component: Welcome,
-  props: {},
-}));
+import { HeaderComponent } from 'header-lib';
+
+// export const env = 'Si';
+
+storiesOf('Next-header', module)
+  .add('Install', () => ({
+    component: HeaderComponent,
+    props: {},
+  }))
+  .add('Long page with fixed header', () => ({
+    component: HeaderComponent
+  }))
+  .add('Long page with simple header', () => ({
+    // component: HeaderComponent
+    template: `<div class="next-header"></div>`
+    // <next-header env="env" role="role" (refClicked)="onPress($event)"
+    //   (helpSlot)="helpSlot($event)"
+    //   (userName)="userName($event)"
+    //   (logout)="logout($event)">
+    //   <span help-slot>
+    //       <i class="fas fa-question"></i>
+    //   </span>
+    //   <span userName>Mariia Zubkova</span>
+    //   <span logout>
+    //     <i class="fa fa-sign-out-alt"></i>
+    //   </span>
+    // </next-header>
+    // `
+  }))
+  .add('Dev mode', () => ({
+    component: HeaderComponent
+  }))
+  .add('Prod mode', () => ({
+    component: HeaderComponent
+  }));
+  // .add('Long page with simple header', () => ({}));
 
 storiesOf('Button', module)
   .add('with text', () => ({
@@ -45,10 +77,3 @@ storiesOf('Another Button', module).add('button with link to another story', () 
   },
 }));
 
-storiesOf('Another Button2', module).add('button with link to another story', () => ({
-  component: Button,
-  props: {
-    text: 'Go to Welcome Story',
-    onClick: linkTo('Welcome2'),
-  },
-}));

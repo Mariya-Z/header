@@ -1,12 +1,12 @@
-<next-header env="env" role="role" (refClicked)="onPress($event)"
+<next-header env="env" role="role" (ref)="onPress($event)"
   (helpSlot)="helpSlot($event)"
   (userName)="userName($event)"
   (logout)="logout($event)">
-  <span help-slot>
+  <span helpSlot (click)="helpSlotClicked()" class="item">
       <i class="fas fa-question"></i>
   </span>
-  <span userName>Mariia Zubkova</span>
-  <span logout>
+  <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
+  <span logout (click)="logoutClicked()" class="item">
     <i class="fa fa-sign-out-alt"></i>
   </span>
 </next-header>

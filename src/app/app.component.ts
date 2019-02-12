@@ -6,10 +6,20 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'header-lib-app';
-  public nameClicked = new EventEmitter();
 
   onPress() {
     console.log('app');
+  }
+
+  helpSlotClicked(): void {
+    console.log('helpSlot');
+  }
+
+  userNameClicked(): void {
+    console.log('userName');
+  }
+
+  logoutClicked(): void {
+    console.log('logout');
   }
 }

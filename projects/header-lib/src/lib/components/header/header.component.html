@@ -4,11 +4,11 @@
   </section>
   <section class="next-header__bar">
     <div>
-      <span class="next-header__name" (click)="test()">{{role}}</span>
+      <span class="next-header__name" (click)="refClicked()">{{role}}</span>
       <span class="next-header__descr">Descr</span>
     </div>
     <div class="next-header__user-section">
-      <ng-content select="[help-slot]"></ng-content>
+      <ng-content select="[helpSlot]"></ng-content>
       <ng-content select="[userName]"></ng-content>
       <ng-content select="[logout]"></ng-content>
     </div>

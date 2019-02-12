@@ -1,44 +1,102 @@
-import { storiesOf } from '@storybook/angular';
+import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Welcome, Button } from '@storybook/angular/demo';
+import { Button } from '@storybook/angular/demo';
+
+import * as longText from './long-text.md';
+
 
 import { HeaderComponent } from 'header-lib';
 
-// export const env = 'Si';
 
 storiesOf('Next-header', module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [HeaderComponent],
+    })
+  )
   .add('Install', () => ({
-    component: HeaderComponent,
-    props: {},
+    template: `
+    <next-header env="env" role="role" (refClicked)="onPress($event)"
+      (helpSlot)="helpSlot($event)"
+      (userName)="userName($event)"
+      (logout)="logout($event)">
+      <span help-slot>
+          <i class="fas fa-question"></i>
+      </span>
+      <span userName>Mariia Zubkova</span>
+      <span logout>
+        <i class="fa fa-sign-out-alt"></i>
+      </span>
+    </next-header>
+    `
   }))
   .add('Long page with fixed header', () => ({
-    component: HeaderComponent
+    template: `
+    <next-header env="env" role="role" (refClicked)="onPress($event)"
+      (helpSlot)="helpSlot($event)"
+      (userName)="userName($event)"
+      (logout)="logout($event)">
+      <span help-slot>
+          <i class="fas fa-question"></i>
+      </span>
+      <span userName>Mariia Zubkova</span>
+      <span logout>
+        <i class="fa fa-sign-out-alt"></i>
+      </span>
+    </next-header>
+    `
   }))
   .add('Long page with simple header', () => ({
-    // component: HeaderComponent
-    template: `<div class="next-header"></div>`
-    // <next-header env="env" role="role" (refClicked)="onPress($event)"
-    //   (helpSlot)="helpSlot($event)"
-    //   (userName)="userName($event)"
-    //   (logout)="logout($event)">
-    //   <span help-slot>
-    //       <i class="fas fa-question"></i>
-    //   </span>
-    //   <span userName>Mariia Zubkova</span>
-    //   <span logout>
-    //     <i class="fa fa-sign-out-alt"></i>
-    //   </span>
-    // </next-header>
-    // `
+    template: `
+    <next-header env="env" role="role" (refClicked)="onPress($event)"
+      (helpSlot)="helpSlot($event)"
+      (userName)="userName($event)"
+      (logout)="logout($event)">
+      <span help-slot>
+          <i class="fas fa-question"></i>
+      </span>
+      <span userName>Mariia Zubkova</span>
+      <span logout>
+        <i class="fa fa-sign-out-alt"></i>
+      </span>
+    </next-header>
+    `
+    // <p>${longText}</p>
   }))
   .add('Dev mode', () => ({
-    component: HeaderComponent
+    template: `
+    <next-header env="env" role="role" (refClicked)="onPress($event)"
+      (helpSlot)="helpSlot($event)"
+      (userName)="userName($event)"
+      (logout)="logout($event)">
+      <span help-slot>
+          <i class="fas fa-question"></i>
+      </span>
+      <span userName>Mariia Zubkova</span>
+      <span logout>
+        <i class="fa fa-sign-out-alt"></i>
+      </span>
+    </next-header>
+    `
   }))
   .add('Prod mode', () => ({
-    component: HeaderComponent
+    template: `
+    <next-header env="" role="role" (refClicked)="onPress($event)"
+      (helpSlot)="helpSlot($event)"
+      (userName)="userName($event)"
+      (logout)="logout($event)">
+      <span help-slot>
+          <i class="fas fa-question"></i>
+      </span>
+      <span userName>Mariia Zubkova</span>
+      <span logout>
+        <i class="fa fa-sign-out-alt"></i>
+      </span>
+    </next-header>
+    `
   }));
   // .add('Long page with simple header', () => ({}));
 

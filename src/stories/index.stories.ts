@@ -5,11 +5,24 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button } from '@storybook/angular/demo';
 
-import * as longText from './long-text.md';
+// import * as longText from './long-text.md';
 
 
 import { HeaderComponent } from 'header-lib';
 
+const styles = `
+  <style>
+    .item \{
+      cursor: pointer;
+      margin: 3px;
+
+      :hover {
+          background-color: #fff;
+          color: #0460A9;
+      }
+    }
+  </style>
+`;
 
 storiesOf('Next-header', module)
   .addDecorator(
@@ -19,15 +32,18 @@ storiesOf('Next-header', module)
   )
   .add('Install', () => ({
     template: `
+    ${styles}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <next-header env="env" role="role" (refClicked)="onPress($event)"
       (helpSlot)="helpSlot($event)"
       (userName)="userName($event)"
       (logout)="logout($event)">
-      <span help-slot>
+      <span helpSlot (click)="helpSlotClicked()" class="item">
           <i class="fas fa-question"></i>
       </span>
-      <span userName>Mariia Zubkova</span>
-      <span logout>
+      <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
+      <span logout (click)="logoutClicked()" class="item">
         <i class="fa fa-sign-out-alt"></i>
       </span>
     </next-header>
@@ -126,12 +142,4 @@ storiesOf('Button', module)
       },
     }))
   );
-
-storiesOf('Another Button', module).add('button with link to another story', () => ({
-  component: Button,
-  props: {
-    text: 'Go to Welcome Story',
-    onClick: linkTo('Welcome'),
-  },
-}));
 

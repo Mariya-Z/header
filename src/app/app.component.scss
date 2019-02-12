@@ -1,4 +1,12 @@
+@import './../../projects/header-lib/src/lib/scss/colors';
+
+
 .item {
     cursor: pointer;
     margin: 3px;
+
+    :hover {
+        background-color: $white;
+        color: $novartis-blue;
+    }
 }

@@ -1,4 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
+import '../../node_modules/font-awesome/css/font-awesome.css';
+
 
 @Component({
   selector: 'app-root',

@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() env: string;
   @Input() role: string;
+  @Input() descr: string;
   @Output() ref = new EventEmitter();
 
   constructor() { }

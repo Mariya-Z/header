@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   }
 
   refClicked(): void {
-    console.log('refClicked');
     this.ref.emit();
   }
 

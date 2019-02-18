@@ -5,18 +5,27 @@ Number of icons can be any, you are able add as many icons as you want
 ### Template for this example looks like code below
 
 ```
-<next-header env="dev" role="NEXT" descr="BioSample"
-    (refClicked)="onPress($event)"
-    (helpSlot)="helpSlot($event)"
-    (userName)="userName($event)"
-    (logout)="logout($event)"
-    showLogout="true">
-    <span helpSlot (click)="helpSlotClicked()" class="item">
-        <i class="fa fa-question"></i>
-    </span>
-    <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-    <span logout (click)="logoutClicked()" class="item">
-        <i class="fa fa-sign-out"></i>
-    </span>
+<next-header
+    [env]="'Dev'"
+    [role]="'NEXT - NIBR'"
+    [descr]="'External Science'"
+    (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+    <div helpSlot>
+        <button
+        title="Help"
+        class="fa fa-question item"
+        ></button>
+    </div>
+    <div userName>
+        <a href="/" class="next-header__user-name">
+        Mariia Zubkova
+        </a>
+    </div>
+    <div logout>
+        <button
+        title="Logout"
+        class=" fa fa-sign-out item"
+        ></button>
+    </div>
 </next-header>
 ```

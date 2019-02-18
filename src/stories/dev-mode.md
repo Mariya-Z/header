@@ -1,19 +1,39 @@
 ## Development mode
 
+When app runs in development mode there is light blue square in left side
+
 ### Template for this example looks like code below
 
 ```
-<next-header env="dev" role="NEXT" descr="BioSample"
-    (refClicked)="onPress($event)"
-    (helpSlot)="helpSlot($event)"
-    (userName)="userName($event)"
-    (logout)="logout($event)">
-    <span helpSlot (click)="helpSlotClicked()" class="item">
-        <i class="fa fa-question"></i>
-    </span>
-    <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-    <span logout (click)="logoutClicked()" class="item">
-        <i class="fa fa-sign-out"></i>
-    </span>
+<next-header
+  [env]="'Dev'"
+  [role]="'NEXT - NIBR'"
+  [descr]="'External Science'"
+  (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+  <div helpSlot>
+    <button
+      title="Menu"
+      class="fa fa-th item"
+    ></button>
+    <button
+      title="Alert"
+      class="fa fa-bell item"
+    ></button>
+    <button
+      title="Help"
+      class="fa fa-question item"
+    ></button>
+  </div>
+  <div userName>
+    <a href="/" class="next-header__user-name">
+      Mariia Zubkova
+    </a>
+  </div>
+  <div logout>
+    <button
+      title="Logout"
+      class=" fa fa-sign-out item"
+    ></button>
+  </div>
 </next-header>
 ```

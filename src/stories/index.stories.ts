@@ -16,14 +16,36 @@ import { HeaderComponent } from 'header-lib';
 
 const styles = `
   <style>
+    .next-header__user-name \{
+      display: inline-block;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      color: #fff;
+      font: Arial;
+      font-size: 14px;
+      padding: 10px 0;
+    \}
+
     .item \{
       cursor: pointer;
-      margin: 3px;
+      background: none;
+      background-image: none;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      height: 36px;
+      width:36px;
+      margin: 0;
+      padding: 0;
+    \}
 
-      :hover \{
-          background-color: #fff;
-          color: #0460A9;
-      \}
+    .item:hover, .item:active, .item:focus \{
+      background-color: #fff;
+      color: #0460a9;
+    \}
+
+    .item:focus \{
+      outline: 0;
     \}
   </style>
 `;
@@ -38,25 +60,37 @@ storiesOf('Next-header', module)
     withNotes({text: marked(defaultText)}) (() => ({
       template: `
       ${styles}
-      <next-header env="dev" role="NEXT" descr="BioSample"
-        (refClicked)="onPress($event)"
-        (helpSlot)="helpSlot($event)"
-        (userName)="userName($event)"
-        (logout)="logout($event)">
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-th"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-bell"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-question"></i>
-        </span>
-        <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-        <span logout (click)="logoutClicked()" class="item">
-          <i class="fa fa-sign-out"></i>
-        </span>
-      </next-header>
+        <next-header
+          [env]="'Dev'"
+          [role]="'NEXT - NIBR'"
+          [descr]="'External Science'"
+          (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+          <div helpSlot>
+            <button
+              title="Menu"
+              class="fa fa-th item"
+            ></button>
+            <button
+              title="Alert"
+              class="fa fa-bell item"
+            ></button>
+            <button
+              title="Help"
+              class="fa fa-question item"
+            ></button>
+          </div>
+          <div userName>
+            <a href="/" class="next-header__user-name">
+              Mariia Zubkova
+            </a>
+          </div>
+          <div logout>
+            <button
+              title="Logout"
+              class=" fa fa-sign-out item"
+            ></button>
+          </div>
+        </next-header>
       `
     }))
   )
@@ -64,19 +98,29 @@ storiesOf('Next-header', module)
     withNotes({text: marked(lessIconsOnLeftSide)}) ( () => ({
       template: `
       ${styles}
-      <next-header env="dev" role="NEXT" descr="BioSample"
-          (refClicked)="onPress($event)"
-          (helpSlot)="helpSlot($event)"
-          (userName)="userName($event)"
-          (logout)="logout($event)">
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-              <i class="fa fa-question"></i>
-          </span>
-          <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-          <span logout (click)="logoutClicked()" class="item">
-            <i class="fa fa-sign-out"></i>
-          </span>
-        </next-header>
+      <next-header
+        [env]="'Dev'"
+        [role]="'NEXT - NIBR'"
+        [descr]="'External Science'"
+        (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+        <div helpSlot>
+          <button
+            title="Help"
+            class="fa fa-question item"
+          ></button>
+        </div>
+        <div userName>
+          <a href="/" class="next-header__user-name">
+            Mariia Zubkova
+          </a>
+        </div>
+        <div logout>
+          <button
+            title="Logout"
+            class=" fa fa-sign-out item"
+          ></button>
+        </div>
+      </next-header>
       `
     }))
   )
@@ -84,24 +128,36 @@ storiesOf('Next-header', module)
     withNotes({text: marked(devMode)}) (() => ({
       template: `
       ${styles}
-      <next-header env="dev" role="NEXT" descr="BioSample"
-        (refClicked)="onPress($event)"
-        (helpSlot)="helpSlot($event)"
-        (userName)="userName($event)"
-        (logout)="logout($event)">
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-th"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-bell"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-question"></i>
-        </span>
-        <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-        <span logout (click)="logoutClicked()" class="item">
-          <i class="fa fa-sign-out"></i>
-        </span>
+      <next-header
+        [env]="'Dev'"
+        [role]="'NEXT - NIBR'"
+        [descr]="'External Science'"
+        (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+        <div helpSlot>
+          <button
+            title="Menu"
+            class="fa fa-th item"
+          ></button>
+          <button
+            title="Alert"
+            class="fa fa-bell item"
+          ></button>
+          <button
+            title="Help"
+            class="fa fa-question item"
+          ></button>
+        </div>
+        <div userName>
+          <a href="/" class="next-header__user-name">
+            Mariia Zubkova
+          </a>
+        </div>
+        <div logout>
+          <button
+            title="Logout"
+            class=" fa fa-sign-out item"
+          ></button>
+        </div>
       </next-header>
       `
     }))
@@ -110,24 +166,36 @@ storiesOf('Next-header', module)
     withNotes({text: marked(prodMode)}) (() => ({
       template: `
       ${styles}
-      <next-header env="" role="NEXT" descr="BioSample"
-        (refClicked)="onPress($event)"
-        (helpSlot)="helpSlot($event)"
-        (userName)="userName($event)"
-        (logout)="logout($event)">
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-th"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-          <i class="fa fa-bell"></i>
-        </span>
-        <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-question"></i>
-        </span>
-        <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-        <span logout (click)="logoutClicked()" class="item">
-          <i class="fa fa-sign-out"></i>
-        </span>
+      <next-header
+        [env]="''"
+        [role]="'NEXT - NIBR'"
+        [descr]="'External Science'"
+        (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+        <div helpSlot>
+          <button
+            title="Menu"
+            class="fa fa-th item"
+          ></button>
+          <button
+            title="Alert"
+            class="fa fa-bell item"
+          ></button>
+          <button
+            title="Help"
+            class="fa fa-question item"
+          ></button>
+        </div>
+        <div userName>
+          <a href="/" class="next-header__user-name">
+            Mariia Zubkova
+          </a>
+        </div>
+        <div logout>
+          <button
+            title="Logout"
+            class=" fa fa-sign-out item"
+          ></button>
+        </div>
       </next-header>
       `
     }))
@@ -137,25 +205,36 @@ storiesOf('Next-header', module)
       template: `
       ${styles}
       <div>
-        <next-header class="head"
-          env="dev" role="NEXT" descr="BioSample"
-          (refClicked)="onPress($event)"
-          (helpSlot)="helpSlot($event)"
-          (userName)="userName($event)"
-          (logout)="logout($event)">
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-th"></i>
-          </span>
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-bell"></i>
-          </span>
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-              <i class="fa fa-question"></i>
-          </span>
-          <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-          <span logout (click)="logoutClicked()" class="item">
-            <i class="fa fa-sign-out"></i>
-          </span>
+        <next-header
+          [env]="'Dev'"
+          [role]="'NEXT - NIBR'"
+          [descr]="'External Science'"
+          (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+          <div helpSlot>
+            <button
+              title="Menu"
+              class="fa fa-th item"
+            ></button>
+            <button
+              title="Alert"
+              class="fa fa-bell item"
+            ></button>
+            <button
+              title="Help"
+              class="fa fa-question item"
+            ></button>
+          </div>
+          <div userName>
+            <a href="/" class="next-header__user-name">
+              Mariia Zubkova
+            </a>
+          </div>
+          <div logout>
+            <button
+              title="Logout"
+              class=" fa fa-sign-out item"
+            ></button>
+          </div>
         </next-header>
         <div class="content">${longText}</div>
       </div>
@@ -178,24 +257,35 @@ storiesOf('Next-header', module)
       </style>
       <div>
         <next-header class="head"
-          env="dev" role="NEXT" descr="BioSample"
-          (refClicked)="onPress($event)"
-          (helpSlot)="helpSlot($event)"
-          (userName)="userName($event)"
-          (logout)="logout($event)">
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-th"></i>
-          </span>
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-            <i class="fa fa-bell"></i>
-          </span>
-          <span helpSlot (click)="helpSlotClicked()" class="item">
-              <i class="fa fa-question"></i>
-          </span>
-          <span userName (click)="userNameClicked()" class="item">Mariia Zubkova</span>
-          <span logout (click)="logoutClicked()" class="item">
-            <i class="fa fa-sign-out"></i>
-          </span>
+          [env]="'Dev'"
+          [role]="'NEXT - NIBR'"
+          [descr]="'External Science'"
+          (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+          <div helpSlot>
+            <button
+              title="Menu"
+              class="fa fa-th item"
+            ></button>
+            <button
+              title="Alert"
+              class="fa fa-bell item"
+            ></button>
+            <button
+              title="Help"
+              class="fa fa-question item"
+            ></button>
+          </div>
+          <div userName>
+            <a href="/" class="next-header__user-name">
+              Mariia Zubkova
+            </a>
+          </div>
+          <div logout>
+            <button
+              title="Logout"
+              class=" fa fa-sign-out item"
+            ></button>
+          </div>
         </next-header>
         <div class="content">${longText}</div>
       </div>

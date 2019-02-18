@@ -1,6 +1,8 @@
-@import './../../scss/colors';
-@import './../../scss/fonts';
-@import './../../scss/sizes';
+$font-headers: Arial;
+$header-height: 36px;
+$white: #fff;
+$blue-light: #5291DD;
+$blue: #0460A9;
 
 .next-header {
     margin: 0;
@@ -20,12 +22,15 @@
     }
 
     &__bar {
-        background-color: $novartis-blue;
+        background-color: $blue;
         color: $white;
         display: flex;
         justify-content: space-between;
-        padding: 6px 10px;
         width: 100%;
+
+        &--text-middle {
+            padding: 6px 10px;
+        }
     }
 
     &__name {
@@ -42,6 +47,7 @@
     }
 
     &__user-section {
-        display: inherit;
+        display: flex;
+        align-items: stretch;
     }
 }

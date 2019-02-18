@@ -9,19 +9,27 @@ import '../../node_modules/font-awesome/css/font-awesome.css';
 })
 export class AppComponent {
 
-  onPress() {
-    console.log('app');
+  env = 'Dev';
+  role = 'NEXT - NIBR';
+  descr = 'External Science';
+
+  onProjectNameClick() {
+    console.log('onProjectNameClick');
   }
 
-  helpSlotClicked(): void {
-    console.log('helpSlot');
+  onMenuClick(): void {
+    console.log('onMenuClick');
   }
 
-  userNameClicked(): void {
-    console.log('userName');
+  onBellClick(): void {
+    console.log('onBellClick');
   }
 
-  logoutClicked(): void {
-    console.log('logout');
+  onQuestionClick(): void {
+    console.log('onQuestionClick');
+  }
+
+  onLogoutClick(): void {
+    console.log('onLogoutClick');
   }
 }

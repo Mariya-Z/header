@@ -1,10 +1,10 @@
 <article class="next-header">
-  <section class="next-header__env" *ngIf="env">
+  <section class="next-header__env" [hidden]="!env">
     <div>{{env}}</div>
   </section>
   <section class="next-header__bar">
-    <div>
-      <span class="next-header__name" (click)="refClicked()">{{role}}</span>
+    <div class="next-header__bar--text-middle">
+      <span class="next-header__name" (click)="onProjectNameClick()">{{role}}</span>
       <span class="next-header__descr">{{descr}}</span>
     </div>
     <div class="next-header__user-section">

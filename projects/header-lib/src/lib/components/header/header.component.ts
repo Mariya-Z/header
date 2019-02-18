@@ -1,23 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'next-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() env: string;
   @Input() role: string;
   @Input() descr: string;
-  @Output() ref = new EventEmitter();
+  @Output() ProjectNameClickedEmmiter = new EventEmitter<void>();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  refClicked(): void {
-    this.ref.emit();
+  onProjectNameClick(): void {
+    this.ProjectNameClickedEmmiter.emit();
   }
 
 }

@@ -1,12 +1,38 @@
-@import './../../projects/header-lib/src/lib/scss/colors';
+$white: #fff;
+$blue: #0460a9;
+$header-height: 36px;
 
+.next-header {
+
+    &__user-name {
+        display: inline-block;
+        margin: 0 1.2rem;
+        text-decoration: none;
+        color: $white;
+        font: Arial;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
 
 .item {
     cursor: pointer;
-    margin: 3px;
+    background: none;
+    background-image: none;
+    color: $white;
+    border: none;
+    border-radius: 0;
+    height: $header-height;
+    width: $header-height;
+    margin: 0;
+    padding: 0;
 
-    :hover {
+    &:hover, &:active, &:focus {
         background-color: $white;
-        color: $novartis-blue;
+        color: $blue;
+    }
+
+    &:focus {
+        outline: 0;
     }
 }

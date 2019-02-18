@@ -1,4 +1,4 @@
-##Page with long text and fixed header
+## Page with long text and fixed header
 
 ### Template for this example looks like code below
 

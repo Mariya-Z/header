@@ -10,8 +10,8 @@ import '../../node_modules/font-awesome/css/font-awesome.css';
 export class AppComponent {
 
   env = 'Dev';
-  role = 'NEXT - NIBR';
-  descr = 'External Science';
+  projectName = 'NEXT - NIBR';
+  description = 'External Science';
 
   onProjectNameClick() {
     console.log('onProjectNameClick');

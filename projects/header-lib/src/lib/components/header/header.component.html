@@ -4,8 +4,8 @@
   </section>
   <section class="next-header__bar">
     <div class="next-header__bar--text-middle">
-      <span class="next-header__name" (click)="onProjectNameClick()">{{role}}</span>
-      <span class="next-header__descr">{{descr}}</span>
+      <button class="next-header__name" (click)="onProjectNameClick()">{{projectName}}</button>
+      <span class="next-header__description">{{description}}</span>
     </div>
     <div class="next-header__user-section">
       <ng-content select="[helpSlot]"></ng-content>

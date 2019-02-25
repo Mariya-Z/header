@@ -39,9 +39,13 @@ $blue: #0460A9;
         font-weight: bold;
         cursor: pointer;
         font-size: 20px;
+        background: none;
+        background-image: none;
+        color: $white;
+        border: none;
     }
 
-    &__descr {
+    &__description {
         font-size: 14px;
         margin-left: 4px;
     }

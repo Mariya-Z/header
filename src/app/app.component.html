@@ -1,8 +1,8 @@
 <next-header 
   [env]="env"
-  [role]="role"
-  [descr]="descr"
-  (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+  [projectName]="projectName"
+  [description]="description"
+  (projectNameClick)="onProjectNameClick($event)">
 
   <div helpSlot>
     <button 

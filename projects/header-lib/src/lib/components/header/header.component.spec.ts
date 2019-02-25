@@ -19,8 +19,8 @@ describe('HeaderComponent', () => {
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     component.env = 'dev';
-    component.role = 'NEXT - NIBR';
-    component.descr = 'External Science';
+    component.projectName = 'NEXT - NIBR';
+    component.description = 'External Science';
     spyOnClick = spyOn(component, 'onProjectNameClick');
     fixture.detectChanges();
   });
@@ -44,8 +44,8 @@ describe('HeaderComponent', () => {
     expect(element.nativeElement.textContent).toContain('NEXT - NIBR');
   });
 
-  it('should show descr', () => {
-    const element = fixture.debugElement.query(By.css('.next-header__descr'));
+  it('should show description', () => {
+    const element = fixture.debugElement.query(By.css('.next-header__description'));
     expect(element.nativeElement.textContent).toContain('External Science');
   });
 });

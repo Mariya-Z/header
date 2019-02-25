@@ -7,9 +7,9 @@ When app runs in development mode there is light blue square in left side
 ```
 <next-header
   [env]="'Dev'"
-  [role]="'NEXT - NIBR'"
-  [descr]="'External Science'"
-  (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+  [projectName]="'NEXT - NIBR'"
+  [description]="'External Science'"
+  (projectNameClick)="onProjectNameClick($event)">
   <div helpSlot>
     <button
       title="Menu"

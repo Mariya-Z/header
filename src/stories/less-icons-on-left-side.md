@@ -7,9 +7,9 @@ Number of icons can be any, you are able add as many icons as you want
 ```
 <next-header
     [env]="'Dev'"
-    [role]="'NEXT - NIBR'"
-    [descr]="'External Science'"
-    (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+    [projectName]="'NEXT - NIBR'"
+    [description]="'External Science'"
+    (projectNameClick)="onProjectNameClick($event)">
     <div helpSlot>
         <button
         title="Help"

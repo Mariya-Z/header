@@ -8,12 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
 })
 export class HeaderComponent {
   @Input() env: string;
-  @Input() role: string;
-  @Input() descr: string;
-  @Output() ProjectNameClickedEmmiter = new EventEmitter<void>();
+  @Input() projectName: string;
+  @Input() description: string;
+  @Output() projectNameClick = new EventEmitter<void>();
 
   onProjectNameClick(): void {
-    this.ProjectNameClickedEmmiter.emit();
+    this.projectNameClick.emit();
   }
 
 }

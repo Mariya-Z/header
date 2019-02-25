@@ -29,9 +29,9 @@ export class AppModule { }
 ```
 <next-header
   [env]="'Dev'"
-  [role]="'NEXT - NIBR'"
-  [descr]="'External Science'"
-  (ProjectNameClickedEmmiter)="onProjectNameClick($event)">
+  [projectName]="'NEXT - NIBR'"
+  [description]="'External Science'"
+  (projectNameClick)="onProjectNameClick($event)">
   <div helpSlot>
     <button
       title="Menu"
